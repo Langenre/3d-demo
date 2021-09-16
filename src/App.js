@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import ThreeComponent from './threeComponent';
+import ThreeControls from './threeControls';
+import { ThreeProvider } from './threeHooks';
+import 'semantic-ui-css/semantic.min.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThreeProvider>
+        <div style={{ height: '70px', padding: '20px' }}>
+          <ThreeControls />
+        </div>
+        <ThreeComponent />
+      </ThreeProvider>
     </div>
   );
 }
